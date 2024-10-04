@@ -34,4 +34,5 @@ def casemaker(size):
 # The larger the input size, the exponentially longer
 # sizes = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
 
+# test same size with routine_1 is impossible
 
