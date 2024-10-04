@@ -27,49 +27,50 @@ class RoutineAnalysis:
     def clear_deltas(self):
         self.deltas.clear()
 
-# Repetition experiment with different sizes and sample sizes(100, 500, 1000)
-def data_generator(fut, casemaker, sizes, repetitions_list):
+# Repetition experiment with different sizes and sample sizes
+def data_generator(fut, casemaker, sizes, repetitions_list, file_name):
     
     experiment = RoutineAnalysis()
-    results = {}
 
     # Save the results as a backup
-    with open('routine_1_exp_001.txt', 'w') as file:
+    with open(file_name, 'w') as file:
+        
+        results = {}
 
-        for size in sizes:
-            means = []
+        for repetitions in repetitions_list:
+                for size in sizes:
+                    mean_time = experiment.time_routine(fut, casemaker, size, repetitions)
+         
 
-            for repetitions in repetitions_list:
-                mean_time = experiment.time_routine(fut, casemaker, size, repetitions)
-                means.append(mean_time)
+                    print(f"Size: {size}, Repetitions: {repetitions}, Mean: {mean_time:.5f}")
 
-                print(f"Size: {size}, Repetitions: {repetitions}, Mean: {mean_time:.5f}")
+                    results[(repetitions, size)] = mean_time
                 
-                results[(size, repetitions)] = mean_time
-                file.write(f"{size},{repetitions},{mean_time:.5f}\n")
+                    file.write(f"{repetitions},{size},{mean_time:.5f}\n")
                 
-                experiment.clear_deltas()    
+                    experiment.clear_deltas()    
 
-    return results
+        return results
 
 def main():
+
+    routines = {}
 
     # test
     sizes = [10, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 4000, 7000, 10000, 20000, 30000,  50000, 100000, 200000]
     repetitions_list = [100, 500, 1000]
 
     # List of different input sizes to test
-    # sizes = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]     # small sizes     
-    # sizes = [5000, 10000, 20000]             # Mid-sized
-    # sizes = [50000, 100000, 200000]        # Large sizes 
+    # sizes = [10, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 4000, 7000, 10000, 20000, 30000,  50000, 100000, 200000, 400000, 600000, 800000, 100000]
+    # repetitions_list = [100, 500, 1000, 3000, 5000, 10000]
     
-    # samples at size
-    #repetitions_list = [100, 500, 1000]
-
     # Run the experiment
-    results = data_generator(routine_1.fut, routine_1.casemaker, sizes, repetitions_list)
+    data_generator(routine_1.fut, routine_1.casemaker, sizes, repetitions_list, "routine_1.txt")
+    data_generator(routine_2.fut, routine_2.casemaker, sizes, repetitions_list, "routine_2.txt")
+    data_generator(routine_3.fut, routine_3.casemaker, sizes, repetitions_list, "routine_3.txt")
+    data_generator(routine_4.fut, routine_4.casemaker, sizes, repetitions_list, "routine_4.txt")
+    data_generator(routine_5.fut, routine_5.casemaker, sizes, repetitions_list, "routine_5.txt")
 
-    # test
     print("Done")
 
 

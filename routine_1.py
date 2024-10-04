@@ -25,6 +25,7 @@ def casemaker(size):
 
 # to simulate a heavier computation
 # Binary search
+# Logarithmic graph
 # logarithmic time complexity, O(log n)
 # its performance scales well with larger input sizes
 

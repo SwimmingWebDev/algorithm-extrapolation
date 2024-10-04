@@ -17,4 +17,5 @@ def casemaker(size):
 # 1e9 1*10^9
 # 1,000,000,000 (one billion)
 
-
+# quadratic growth, polynomial
+# the time will increase much faster as 

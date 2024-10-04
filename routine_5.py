@@ -17,3 +17,8 @@ def casemaker(size):
     for i in range(1, len(oof)):
         oof[i] += oof[i - 1]
     return [oof, oof[random.randint(1, len(oof)) - 1]]
+
+
+# t(n)=c⋅n
+# Linear Growth look like a straight line
+# the number of iterations grows proportionally with the size

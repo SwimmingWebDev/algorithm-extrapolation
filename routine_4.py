@@ -20,3 +20,8 @@ def fut2(case, s, t):
 
 def casemaker(size):
     return [random.randint(0, int(1e9)) for _ in range(size)]
+
+
+# sorting algorithm
+# super-polynomial growth
+# The curve will rise steeply
