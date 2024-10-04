@@ -19,6 +19,19 @@ def fut(case):
         if result > 1e24:
             return "WAT"
 
+# 1 * 10^24     
+# 1,000,000,000,000,000,000,000,000 (one septillion)
+
 
 def casemaker(size):
     return "1" + "".join(random.choices("10", k=size))
+
+# exponential search
+# The complexity of this function grows exponentially, 
+# as it is effectively generating all possible binary strings 
+# and comparing them to the case.
+
+# The larger the input size, the exponentially longer
+# sizes = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+
+

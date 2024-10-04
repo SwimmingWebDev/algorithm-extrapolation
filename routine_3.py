@@ -13,4 +13,8 @@ def fut(case):
 
 
 def casemaker(size):
-    return [random.randint(0, int(1e9)) for _ in range(size)]
+    return [random.randint(0, int(1e9)) for _ in range(size)] 
+# 1e9 1*10^9
+# 1,000,000,000 (one billion)
+
+
