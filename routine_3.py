@@ -13,4 +13,4 @@ def fut(case):
 
 
 def casemaker(size):
-    return [random.randint(0, 1e9) for _ in range(size)]
+    return [random.randint(0, int(1e9)) for _ in range(size)]
