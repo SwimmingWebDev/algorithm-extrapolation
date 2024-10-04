@@ -54,14 +54,17 @@ def data_generator(fut, casemaker, sizes, repetitions_list):
 
 def main():
 
+    # test
+    sizes = [10, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 4000, 7000, 10000, 20000, 30000,  50000, 100000, 200000]
+    repetitions_list = [100, 500, 1000]
+
     # List of different input sizes to test
-    # sizes = [10, 20]
-    sizes = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]     # small sizes     
+    # sizes = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]     # small sizes     
     # sizes = [5000, 10000, 20000]             # Mid-sized
     # sizes = [50000, 100000, 200000]        # Large sizes 
     
     # samples at size
-    repetitions_list = [100, 500, 1000]
+    #repetitions_list = [100, 500, 1000]
 
     # Run the experiment
     results = data_generator(routine_1.fut, routine_1.casemaker, sizes, repetitions_list)
