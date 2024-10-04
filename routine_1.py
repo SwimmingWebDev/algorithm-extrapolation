@@ -22,3 +22,12 @@ def casemaker(size):
     step = random.randint(1, 10)
     oof = range(start, start + (size + 2) * step, step)
     return [oof, oof[random.randint(1, len(oof)) - 1]]
+
+# to simulate a heavier computation
+# Binary search
+# logarithmic time complexity, O(log n)
+# its performance scales well with larger input sizes
+
+# Start small: 100, 500, 1000.
+# Mid-size: 5000, 10,000, 20,000.
+# Larger sizes: 50,000, 100,000, 200,000.
