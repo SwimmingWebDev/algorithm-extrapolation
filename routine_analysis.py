@@ -63,19 +63,19 @@ def main():
     sm_mid_sizes = [10, 30, 50, 70, 90, 100, 110, 130, 150, 170, 200, 230, 250, 270, 290, 300]
     mid_sizes = [10, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 900, 1000]
     sizes = [10, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 4000, 7000, 10000, 30000,  50000, 100000, 200000]
-    large_sizes = [500000, 1000000, 2000000, 4000000, 10000000]
+    large_sizes = [100, 200,  400,  800,  1000, 2000, 4000, 8000, 10000, 30000,  50000, 100000, 200000, 500000, 1000000, 2000000, 4000000, 10000000]
 
     # number of samples
-    small_samples = [20, 50, 70, 90, 100]
-    mid_samples = [50, 100, 500, 1000, 2000, 5000]
-    samples = [5000, 10000, 30000, 50000, 100000]
+    # small_samples = [20, 50, 70, 90, 100]
+    # mid_samples = [50, 100, 500, 1000, 2000, 5000]
+    samples = [100, 500, 1000, 5000, 10000]
 
     # Run the experiments
     data_generator(routine_1.fut, routine_1.casemaker, large_sizes, samples, "routine_1.txt")
-    data_generator(routine_2.fut, routine_2.casemaker, small_sizes, [300, 500, 1000], "routine_2.txt")
-    data_generator(routine_3.fut, routine_3.casemaker, [3000, 5000, 10000], mid_samples, "routine_3.txt")
+    data_generator(routine_3.fut, routine_3.casemaker, [3000, 5000, 10000], samples, "routine_3.txt")
     data_generator(routine_4.fut, routine_4.casemaker, sm_mid_sizes, [500, 1000, 2000, 5000], "routine_4.txt")
-    data_generator(routine_5.fut, routine_5.casemaker, sizes, mid_samples, "routine_5.txt")
+    data_generator(routine_5.fut, routine_5.casemaker, sizes, samples, "routine_5.txt")
+    data_generator(routine_2.fut, routine_2.casemaker, small_sizes, [300, 500, 1000], "routine_2.txt")
    
 
     print("Done")
